@@ -1,8 +1,10 @@
+import 'react-native-gesture-handler';
 import React, { useState } from 'react';
-import * as Font from 'expo-font'
-import Home from './screens/home'
-import AppLoading from 'expo-app-loading'
-import Navigator from './routes/homeStack'
+import * as Font from 'expo-font';
+import { Text,View } from 'react-native';
+import {AppLoading} from 'expo';
+import DrawerStack from './routes/drawer';
+
 
 const getFonts = () => {
   return Font.loadAsync({
@@ -13,12 +15,12 @@ const getFonts = () => {
 
 export default function App() {
 
-  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [fontsLoaded, setFontsLoaded] = useState(true);
 
   if (fontsLoaded) {
-    return (
-      <Navigator/>
-    );
+      return (
+        <DrawerStack/>
+      )
   }
   else {
     return (
