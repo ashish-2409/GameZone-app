@@ -32,3 +32,6 @@ export default function App() {
     )
   }
 }
+
+//command to start the app
+// npx expo start -c
